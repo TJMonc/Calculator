@@ -1,12 +1,11 @@
-#include "stack.hpp"
+#include "calc.hpp"
 
 
 int main(int argc, char**argv){
-    Stack stack;
+    std::vector<std::string> stack;
     while(true){
         std::string val;
         std::cin >> val;
-
         if(val == "="){
             break;
         }
@@ -17,12 +16,17 @@ int main(int argc, char**argv){
             return -1;
         }
 
-       stack.push(val);
+       stack.push_back(val);
     }
     std::cin.ignore(1);
-    int size = stack.size();
-    for(int i = 0; i < size; i++){
-        std::cout << stack.pop() << " ";
+
+    Calculator calc(stack);
+    try{
+        double answer = calc.calculate();
+        std::cout << "Answer: " << answer;
+    }
+    catch(CalcException& e){
+        std::cout << "ERROR: " << e.what();
     }
 
     std::cin.get();

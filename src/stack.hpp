@@ -3,7 +3,8 @@
 #include <string>
 #include <vector>
 #include <cmath>
-
+#include <unordered_map>
+#include "calcException.hpp"
 class Stack{
     private:
         std::string* stack;
@@ -19,7 +20,8 @@ class Stack{
 
        inline ~Stack() { delete[] stack; };
 
-       inline std::string peek(){return stack[m_size - 1];};
+       std::string peek();
+       bool contains(std::string str);
 
         std::string& operator[](int index){
             if(index >= m_size){

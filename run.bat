@@ -1,4 +1,4 @@
-cmake -G "MinGW Makefiles" -S . -B build
+cmake -G "MinGW Makefiles" -D CMAKE_CXX_COMPILER=g++64 -S . -B build
 cmake --build build
 cd bin
-start consoleCalculator
+consoleCalculator.exe

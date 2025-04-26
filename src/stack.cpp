@@ -36,3 +36,19 @@ std::string Stack::pop(){
 
     return temp;
 }
+
+std::string Stack::peek(){
+    return m_size == 0 ? "" : stack[m_size - 1];
+}
+
+bool Stack::contains(std::string str)
+{
+    for(int i = 0; i < m_size; i++){
+        if(stack[i] == str){
+            return true;
+        }
+    }
+    return false;
+}
+
+
