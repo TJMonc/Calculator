@@ -1,4 +1,10 @@
-#include <iostream>
-#include <string>
-#include <cmath>
+#pragma once
 
+#include "stack.hpp"
+
+
+class Calculator{
+    private:
+        Stack stack;
+         
+};
